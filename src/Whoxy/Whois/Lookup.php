@@ -1,7 +1,8 @@
 <?php
 
-namespace FernleafSystems\Apis\Whoxy\Whois;
+namespace FernleafSystems\Apis\Whois\Whoxy\Whois;
 
+use FernleafSystems\Apis\Whois\Whoxy\Api;
 use LayerShifter\TLDExtract\Extract;
 
 /**

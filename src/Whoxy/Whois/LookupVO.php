@@ -1,6 +1,6 @@
 <?php
 
-namespace FernleafSystems\Apis\Whoxy\Whois;
+namespace FernleafSystems\Apis\Whois\Whoxy\Whois;
 
 use FernleafSystems\Utilities\Data\Adapter\StdClassAdapter;
 

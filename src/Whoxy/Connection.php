@@ -1,6 +1,6 @@
 <?php
 
-namespace FernleafSystems\Apis\Whoxy\Whois;
+namespace FernleafSystems\Apis\Whois\Whoxy;
 
 class Connection extends \FernleafSystems\Apis\Base\Connection {
 	/**

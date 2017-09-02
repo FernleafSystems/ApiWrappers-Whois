@@ -1,6 +1,6 @@
 <?php
 
-namespace FernleafSystems\Apis\Whoxy\Whois;
+namespace FernleafSystems\Apis\Whois\Whoxy;
 
 use FernleafSystems\Apis\Base\BaseApi;
 
