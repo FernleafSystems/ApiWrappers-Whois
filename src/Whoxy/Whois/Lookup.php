@@ -7,7 +7,7 @@ use LayerShifter\TLDExtract\Extract;
 
 /**
  * Class Lookup
- * @package FernleafSystems\Apis\Whois\Whoxy
+ * @package FernleafSystems\Apis\Whois\Whoxy\Whois
  */
 class Lookup extends Api {
 

@@ -16,7 +16,7 @@ class Api extends BaseApi {
 	 * @return array
 	 */
 	protected function prepFinalRequestData() {
-		$this->setParam( 'key', $this->getConnection()->getApiKey() );
+		$this->setRequestDataItem( 'key', $this->getConnection()->getApiKey() );
 		return parent::prepFinalRequestData();
 	}
 

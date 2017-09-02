@@ -6,7 +6,7 @@ use FernleafSystems\Utilities\Data\Adapter\StdClassAdapter;
 
 /**
  * Class LookupVO
- * @package FernleafSystems\Apis\Whois\Whoxy
+ * @package FernleafSystems\Apis\Whois\Whoxy\Whois
  */
 class LookupVO {
 
