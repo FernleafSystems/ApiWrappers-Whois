@@ -1,2 +1,2 @@
 # DomainWhoisLookup
-An Wrapper for Whoxy.com API for domain whois
+A Wrapper for Whoxy.com API for domain whois lookup
