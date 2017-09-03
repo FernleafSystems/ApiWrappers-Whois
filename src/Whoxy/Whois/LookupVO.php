@@ -1,12 +1,12 @@
 <?php
 
-namespace FernleafSystems\Apis\Whois\Whoxy;
+namespace FernleafSystems\ApiWrappers\Whois\Whoxy\Whois;
 
 use FernleafSystems\Utilities\Data\Adapter\StdClassAdapter;
 
 /**
  * Class LookupVO
- * @package FernleafSystems\Apis\Whois\Whoxy
+ * @package FernleafSystems\ApiWrappers\Whois\Whoxy\Whois
  */
 class LookupVO {
 
@@ -14,30 +14,30 @@ class LookupVO {
 
 	/**
 	 * @param bool $bAsUnixTimestamp
-	 * @return string
+	 * @return int|string
 	 */
 	public function getDateCreated( $bAsUnixTimestamp = true ) {
 		$sDate = $this->getStringParam( 'create_date' );
-		return $bAsUnixTimestamp ? strtotime( $bAsUnixTimestamp ) : $sDate;
+		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
 	}
 
 	/**
 	 * @param bool $bAsUnixTimestamp
-	 * @return string
+	 * @return int|string
 	 */
 	public function getDateExpiry( $bAsUnixTimestamp = true ) {
 		$sDate = $this->getStringParam( 'expiry_date' );
-		return $bAsUnixTimestamp ? strtotime( $bAsUnixTimestamp ) : $sDate;
+		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
 	}
 
 	/**
 	 * May not be available.
 	 * @param bool $bAsUnixTimestamp
-	 * @return string
+	 * @return int|string
 	 */
 	public function getDateUpdated( $bAsUnixTimestamp = true ) {
 		$sDate = $this->getStringParam( 'update_date' );
-		return $bAsUnixTimestamp ? strtotime( $bAsUnixTimestamp ) : $sDate;
+		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
 	}
 
 	/**
@@ -70,17 +70,12 @@ class LookupVO {
 	}
 
 	/**
-	 * @return string
+	 * @param bool $bAsUnixTimestamp
+	 * @return int|string
 	 */
-	public function getQueryTime() {
-		return $this->getStringParam( 'query_time' );
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getQueryTimeAsTimestamp() {
-		return strtotime( $this->getQueryTime() );
+	public function getQueryTime( $bAsUnixTimestamp = true ) {
+		$sDate = $this->getStringParam( 'query_time' );
+		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
 	}
 
 	/**

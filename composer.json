@@ -1,5 +1,6 @@
 {
-  "name":         "fernleafsystems/apis/whois",
+  "name":         "fernleafsystems/apiwrappers-whois",
+  "description":  "Wrappers for Domain Whois Lookup APIs",
   "authors":      [
 	{
 	  "name":     "Paul Goodchild",
@@ -7,32 +8,23 @@
 	  "homepage": "https://paulgoodchild.me"
 	}
   ],
-  "description": "Simple Wrapper for the Whoxy Domain Whois Lookup API",
-  "keywords": [
+  "license":      "MIT",
+  "keywords":     [
 	"API Wrapper",
-	"Whoxy",
-	"Whois Lookup"
+	"Whois Lookup",
+	"Whoxy"
   ],
   "repositories": [
-	{
-	  "type": "vcs",
-	  "url":  "https://github.com/FernleafSystems/Utilities.git"
-	},
-	{
-	  "type": "vcs",
-	  "url":  "https://github.com/FernleafSystems/Apis-Base"
-	}
   ],
   "require":      {
-	"fernleafsystems/utilities": "^1.0",
-	"fernleafsystems/apis/base": "dev-develop",
-	"layershifter/tld-extract": "^1.0"
+	"fernleafsystems/apiwrappers-base": "^1.0.0",
+	"layershifter/tld-extract":         "^1.0"
   },
   "require-dev":  {
   },
   "autoload":     {
 	"psr-4": {
-	  "FernleafSystems\\Apis\\Whois\\": "src"
+	  "FernleafSystems\\ApiWrappers\\Whois\\": "src"
 	}
   }
 }

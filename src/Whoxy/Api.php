@@ -1,12 +1,12 @@
 <?php
 
-namespace FernleafSystems\Apis\Whois\Whoxy;
+namespace FernleafSystems\ApiWrappers\Whois\Whoxy;
 
-use FernleafSystems\Apis\Base\BaseApi;
+use FernleafSystems\ApiWrappers\Base\BaseApi;
 
 /**
  * Class Api
- * @package FernleafSystems\Apis\Whois\Whoxy
+ * @package FernleafSystems\ApiWrappers\Whois\Whoxy
  */
 class Api extends BaseApi {
 
@@ -16,7 +16,7 @@ class Api extends BaseApi {
 	 * @return array
 	 */
 	protected function prepFinalRequestData() {
-		$this->setParam( 'key', $this->getConnection()->getApiKey() );
+		$this->setRequestDataItem( 'key', $this->getConnection()->getApiKey() );
 		return parent::prepFinalRequestData();
 	}
 

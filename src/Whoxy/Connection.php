@@ -1,8 +1,12 @@
 <?php
 
-namespace FernleafSystems\Apis\Whois\Whoxy;
+namespace FernleafSystems\ApiWrappers\Whois\Whoxy;
 
-class Connection extends \FernleafSystems\Apis\Base\Connection {
+/**
+ * Class Connection
+ * @package FernleafSystems\ApiWrappers\Whois\Whoxy
+ */
+class Connection extends \FernleafSystems\ApiWrappers\Base\Connection {
 	/**
 	 * @return string
 	 */
