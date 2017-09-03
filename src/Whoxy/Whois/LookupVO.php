@@ -1,12 +1,12 @@
 <?php
 
-namespace FernleafSystems\Apis\Whois\Whoxy\Whois;
+namespace FernleafSystems\ApiWrappers\Whois\Whoxy\Whois;
 
 use FernleafSystems\Utilities\Data\Adapter\StdClassAdapter;
 
 /**
  * Class LookupVO
- * @package FernleafSystems\Apis\Whois\Whoxy\Whois
+ * @package FernleafSystems\ApiWrappers\Whois\Whoxy\Whois
  */
 class LookupVO {
 

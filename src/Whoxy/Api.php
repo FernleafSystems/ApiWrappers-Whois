@@ -1,12 +1,12 @@
 <?php
 
-namespace FernleafSystems\Apis\Whois\Whoxy;
+namespace FernleafSystems\ApiWrappers\Whois\Whoxy;
 
-use FernleafSystems\Apis\Base\BaseApi;
+use FernleafSystems\ApiWrappers\Base\BaseApi;
 
 /**
  * Class Api
- * @package FernleafSystems\Apis\Whois\Whoxy
+ * @package FernleafSystems\ApiWrappers\Whois\Whoxy
  */
 class Api extends BaseApi {
 

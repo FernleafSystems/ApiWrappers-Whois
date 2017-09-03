@@ -1,13 +1,13 @@
 <?php
 
-namespace FernleafSystems\Apis\Whois\Whoxy\Whois;
+namespace FernleafSystems\ApiWrappers\Whois\Whoxy\Whois;
 
-use FernleafSystems\Apis\Whois\Whoxy\Api;
+use FernleafSystems\ApiWrappers\Whois\Whoxy\Api;
 use LayerShifter\TLDExtract\Extract;
 
 /**
  * Class Lookup
- * @package FernleafSystems\Apis\Whois\Whoxy\Whois
+ * @package FernleafSystems\ApiWrappers\Whois\Whoxy\Whois
  */
 class Lookup extends Api {
 
