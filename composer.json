@@ -2,29 +2,30 @@
   "name":         "fernleafsystems/apiwrappers-whois",
   "description":  "Wrappers for Domain Whois Lookup APIs",
   "authors":      [
-	{
-	  "name":     "Paul Goodchild",
-	  "email":    "paul@paulgoodchild.me",
-	  "homepage": "https://paulgoodchild.me"
-	}
+    {
+      "name":     "Paul Goodchild",
+      "email":    "paul@paulgoodchild.me",
+      "homepage": "https://paulgoodchild.me"
+    }
   ],
   "license":      "MIT",
   "keywords":     [
-	"API Wrapper",
-	"Whois Lookup",
-	"Whoxy"
+    "API Wrapper",
+    "Whois Lookup",
+    "Whoxy"
   ],
   "repositories": [
   ],
   "require":      {
-	"fernleafsystems/apiwrappers-base": "^1.0.0",
-	"layershifter/tld-extract":         "^1.0"
+    "fernleafsystems/apiwrappers-base": "^2.1",
+    "layershifter/tld-extract":         "^1.1",
+    "php":                              ">=7.4"
   },
   "require-dev":  {
   },
   "autoload":     {
-	"psr-4": {
-	  "FernleafSystems\\ApiWrappers\\Whois\\": "src"
-	}
+    "psr-4": {
+      "FernleafSystems\\ApiWrappers\\Whois\\": "src"
+    }
   }
 }

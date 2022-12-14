@@ -5,44 +5,26 @@ namespace FernleafSystems\ApiWrappers\Whois\Whoxy\Whois;
 use FernleafSystems\ApiWrappers\Whois\Whoxy\Api;
 use LayerShifter\TLDExtract\Extract;
 
-/**
- * Class Lookup
- * @package FernleafSystems\ApiWrappers\Whois\Whoxy\Whois
- */
 class Lookup extends Api {
 
-	/**
-	 * @param string $sDomain
-	 * @return LookupVO
-	 */
-	public function lookup( $sDomain ) {
-		$oLookup = new LookupVO();
-
-		$aResult = $this->setDomain( $sDomain )
-		                ->send()
-		                ->getDecodedResponseBody();
-
-		if ( is_array( $aResult ) && !empty( $aResult ) ) {
-			$oLookup = $oLookup->applyFromArray( $aResult );
-		}
-		return $oLookup;
+	public function lookup( string $domain ) :LookupVO {
+		$result = $this->setDomain( $domain )
+					   ->send()
+					   ->getDecodedResponseBody();
+		return ( new LookupVO() )->applyFromArray( $result );
 	}
 
-	/**
-	 * @param string $sDomain
-	 * @return $this
-	 */
-	public function setDomain( $sDomain ) {
-		return $this->setRequestDataItem( 'whois', $this->parseDomain( $sDomain ) );
+	protected function getVO() :LookupVO {
+		return new LookupVO();
 	}
 
-	/**
-	 * @param string $sDomain
-	 * @return null|string
-	 */
-	protected function parseDomain( $sDomain ) {
+	public function setDomain( string $domain ) :self {
+		return $this->setRequestDataItem( 'whois', $this->parseDomain( $domain ) );
+	}
+
+	protected function parseDomain( string $domain ) :?string {
 		return ( new Extract() )
-			->parse( $sDomain )
+			->parse( $domain )
 			->getRegistrableDomain();
 	}
 }
