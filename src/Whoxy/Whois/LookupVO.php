@@ -2,63 +2,64 @@
 
 namespace FernleafSystems\ApiWrappers\Whois\Whoxy\Whois;
 
-use FernleafSystems\Utilities\Data\Adapter\StdClassAdapter;
+use FernleafSystems\ApiWrappers\Base\BaseVO;
 
 /**
- * Class LookupVO
- * @package FernleafSystems\ApiWrappers\Whois\Whoxy\Whois
+ * @property string|array $domain_status
+ * @property string[]     $name_servers
+ * @property string       $whois_server
+ * @property string       $domain_registered
+ * @property int          $status
+ * @property string       $domain_name
+ * @property string[]     $domain_registrar
+ * @property string       $query_time
+ * @property string       $create_date
+ * @property string       $expiry_date
+ * @property string       $update_date
  */
-class LookupVO {
-
-	use StdClassAdapter;
+class LookupVO extends BaseVO {
 
 	/**
-	 * @param bool $bAsUnixTimestamp
 	 * @return int|string
 	 */
-	public function getDateCreated( $bAsUnixTimestamp = true ) {
-		$sDate = $this->getStringParam( 'create_date' );
-		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
+	public function getDateCreated( bool $asTimestamp = true ) {
+		$date = $this->create_date;
+		return $asTimestamp ? strtotime( $date ) : $date;
 	}
 
 	/**
-	 * @param bool $bAsUnixTimestamp
 	 * @return int|string
 	 */
-	public function getDateExpiry( $bAsUnixTimestamp = true ) {
-		$sDate = $this->getStringParam( 'expiry_date' );
-		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
+	public function getDateExpiry( bool $asTimestamp = true ) {
+		$date = $this->expiry_date;
+		return $asTimestamp ? strtotime( $date ) : $date;
 	}
 
 	/**
 	 * May not be available.
-	 * @param bool $bAsUnixTimestamp
 	 * @return int|string
 	 */
-	public function getDateUpdated( $bAsUnixTimestamp = true ) {
-		$sDate = $this->getStringParam( 'update_date' );
-		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
+	public function getDateUpdated( $asTimestamp = true ) {
+		$date = $this->update_date;
+		return $asTimestamp ? strtotime( $date ) : $date;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getDomainName() {
-		return $this->getStringParam( 'domain_name' );
+	public function getDomainName() :?string {
+		return $this->domain_name;
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getDomainRegistrar() {
-		return $this->getParam( 'domain_registrar' );
+		return $this->domain_registrar;
 	}
 
 	/**
 	 * @return string|array
 	 */
 	public function getDomainStatus() {
-		return $this->getParam( 'domain_status' );
+		return $this->domain_status;
 	}
 
 	/**
@@ -66,37 +67,26 @@ class LookupVO {
 	 * @return string[]
 	 */
 	public function getNameServers() {
-		return $this->getArrayParam( 'name_servers' );
+		return $this->name_servers;
 	}
 
 	/**
-	 * @param bool $bAsUnixTimestamp
 	 * @return int|string
 	 */
-	public function getQueryTime( $bAsUnixTimestamp = true ) {
-		$sDate = $this->getStringParam( 'query_time' );
-		return $bAsUnixTimestamp ? strtotime( $sDate ) : $sDate;
+	public function getQueryTime( bool $asTimestamp = true ) {
+		$date = $this->query_time;
+		return $asTimestamp ? strtotime( $date ) : $date;
 	}
 
-	/**
-	 * @return string
-	 */
-	public function getWhoisServer() {
-		return $this->getStringParam( 'whois_server' );
+	public function getWhoisServer() :?string {
+		return $this->whois_server;
 	}
 
-	/**
-	 * @return bool
-	 */
-	public function isDomainRegistered() {
-		return strtolower( $this->getStringParam( 'domain_registered' ) ) == 'yes';
+	public function isDomainRegistered() :bool {
+		return strtolower( $this->domain_registered ) === 'yes';
 	}
 
-	/**
-	 * @return bool
-	 */
-	public function isValid() {
-		$sDomainName = $this->getDomainName();
-		return ( $this->getParam( 'status' ) == 1 ) && !empty( $sDomainName );
+	public function isValid() :bool {
+		return $this->status == 1 && !empty( $this->getDomainName() );
 	}
 }
